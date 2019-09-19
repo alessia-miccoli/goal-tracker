@@ -2,6 +2,7 @@ import React from 'react';
 import UserForm from './UserForm'
 
 import './style/App.css';
+import CategoriesContainer from './CategoriesContainer';
 
 class App extends React.Component {
 
@@ -12,12 +13,14 @@ class App extends React.Component {
       currentYear : new Date().getFullYear(),
       categories : [],
       errorMessage: "",
-      userName : ""
+      userName : "",
+      isUserFormVisibile: true
     }
 
     this.saveCategory = this.saveCategory.bind(this);
     this.getUserName = this.getUserName.bind(this);
     this.removeCategory = this.removeCategory.bind(this);
+    this.saveUserForm = this.saveUserForm.bind(this);
   }
 
   saveCategory(event){
@@ -53,18 +56,31 @@ class App extends React.Component {
       categories: prevState.categories.filter(x => x !== category)
     }));
 
-    console.log(this.state.categories);
+  }
+
+  saveUserForm(){
+    this.setState(()=>({
+      isUserFormVisibile: false
+    }));
   }
 
   render(){
     return (
       <div className="App">
         Hi{this.state.userName}! Are you ready to set your goals for this {this.state.currentYear}? 
-        <UserForm categories={this.state.categories}
+
+        { this.state.isUserFormVisibile && <UserForm categories={this.state.categories}
         getUserName={this.getUserName}
         errorMessage={this.state.errorMessage}
         saveCategory={this.saveCategory}
-        removeCategory={this.removeCategory}></UserForm>
+        removeCategory={this.removeCategory}
+        saveUserForm={this.saveUserForm}/>}
+        <CategoriesContainer 
+        saveCategory={this.saveCategory}
+        removeCategory={this.removeCategory}
+        categories={this.state.categories}
+        errorMessage={this.state.errorMessage}
+        />
       </div>
     );
   }

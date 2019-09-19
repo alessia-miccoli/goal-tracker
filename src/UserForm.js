@@ -28,7 +28,7 @@ class UserForm extends React.Component {
         </div>
         <p>Click on Save to start listing your goals for each category.<br/>
         If you think you forgot any category, don't worry. You can always add them later.</p>
-        <button>Save</button>
+        <button onClick={this.props.saveUserForm}>Save</button>
       </div>
     );
   }
