@@ -7,8 +7,12 @@ class Categories extends React.Component {
   render(){
     return (
       <form onSubmit={this.props.saveCategory} className="Category">
-        <input name="category" type="text" placeholder="Insert Category"/>
-        <input type="submit"/>
+        <p>{this.props.categories == [] ? "There is nothing here. Insert a Category to start" : "" }</p>
+        <div className="addContainer">
+          <input className="categoryField" name="category" type="text" placeholder="Insert Category"/>
+          <input className="button" type="submit" value="add"/>
+        </div>
+        <p>{this.props.errorMessage}</p>
       </form>
     );
   }

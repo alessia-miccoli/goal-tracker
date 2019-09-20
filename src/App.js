@@ -14,7 +14,8 @@ class App extends React.Component {
       categories : [],
       errorMessage: "",
       userName : "",
-      isUserFormVisibile: true
+      isUserFormVisibile: true,
+      greetingMessage: "Here you can set your goals for this"
     }
 
     this.saveCategory = this.saveCategory.bind(this);
@@ -60,14 +61,15 @@ class App extends React.Component {
 
   saveUserForm(){
     this.setState(()=>({
-      isUserFormVisibile: false
+      isUserFormVisibile: false,
+      greetingMessage: "These are your goals for this"
     }));
   }
 
   render(){
     return (
       <div className="App">
-        Hi{this.state.userName}! Are you ready to set your goals for this {this.state.currentYear}? 
+        <h2>Hi{this.state.userName}! {this.state.greetingMessage} {this.state.currentYear} </h2>
 
         { this.state.isUserFormVisibile && <UserForm categories={this.state.categories}
         getUserName={this.getUserName}
@@ -75,12 +77,13 @@ class App extends React.Component {
         saveCategory={this.saveCategory}
         removeCategory={this.removeCategory}
         saveUserForm={this.saveUserForm}/>}
-        <CategoriesContainer 
+
+        { !this.state.isUserFormVisibile && <CategoriesContainer 
         saveCategory={this.saveCategory}
         removeCategory={this.removeCategory}
         categories={this.state.categories}
         errorMessage={this.state.errorMessage}
-        />
+        />}
       </div>
     );
   }

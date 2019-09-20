@@ -1,3 +1,33 @@
 .App{
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  background-color: #244164;
+  color: white;
+}
+
+.button{
+  background-color: #1E3652;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.deleteButton{
+  background-color: transparent;
+  color: white;
+  padding: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.deleteButton:hover{
+  transform: scale(1.6);
+  cursor: pointer;
 }

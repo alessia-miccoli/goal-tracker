@@ -1,5 +1,51 @@
 .categoryElement{
     display: flex;
+    align-items: center;
+    text-align: left;
+    margin: 0;
+    border-bottom: 1px solid rgba(20, 20, 20, 0.151);
+    padding: 0 5px 0 20px;
+}
+
+.categoryElement p{
+    margin-right: 5px;
+}
+
+#nameField{
+    border: none;
+    background-color: inherit;
+    border-bottom: 2px solid rgba(20, 20, 20, 0.151);
+    padding: 5px 5px 5px 20px;
+    margin-top: 5px;
+    outline: none;
     text-align: center;
-    justify-content: center;
+    color: white;
+}
+
+.UserForm{
+    padding: 20px;
+    background-color: #27476E;
+    width: 60vw;
+    box-shadow: 1px 1px rgba(20, 20, 20, 0.151);
+}
+
+.deleteListButton{
+    color: white;
+    background-color: #1E3652;
+    box-shadow: 1px 1px rgba(20, 20, 20, 0.151);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.deleteListButton:hover{
+    transform: scale(1.1);
+}
+
+#userFormCategories{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }

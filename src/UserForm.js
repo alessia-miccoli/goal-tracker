@@ -1,34 +1,34 @@
 import React from 'react';
-import Category from './Categories'
+import Categories from './Categories'
 
 import  './style/UserForm.css'
 class UserForm extends React.Component {
 
   render(){
-    var categoryList = this.props.categories.map(x => <div key={x} className="categoryElement"><p>{x}</p><button id={x} onClick={this.props.removeCategory}>x</button></div>);
+    var categoryList = this.props.categories.map(x => <div key={x} className="categoryElement"><p>{x}</p><button className="deleteListButton" id={x} onClick={this.props.removeCategory}>x</button></div>);
 
     return (
       <div className="UserForm">
 
-        <p>Let's start by knowing you and your passions.</p>
+        <h4>Let's start by knowing you and what you'd like to accomplish this year.</h4>
         <div id="userForm">
           <label>What's your name? </label><br/>
-          <input onChange={this.props.getUserName} type="text"/>
+          <input id="nameField" onChange={this.props.getUserName} type="text"/>
 
           <div id="categories">
             
-            <p>Insert below the categories ("career", "health", "school", ...) of your goals to keep them organized.</p>
+            <h4>Insert below the categories ("career", "health", "school", ...) of your goals to keep them organized.</h4>
 
-            <Category categories={this.props.categories}
-            saveCategory={this.props.saveCategory}/>
-            {this.props.errorMessage}
+            <Categories categories={this.props.categories}
+            saveCategory={this.props.saveCategory}
+            errorMessage={this.props.errorMessage}/>
           </div>
 
-          {categoryList}
+          <div id="userFormCategories">{categoryList}</div>
         </div>
         <p>Click on Save to start listing your goals for each category.<br/>
         If you think you forgot any category, don't worry. You can always add them later.</p>
-        <button onClick={this.props.saveUserForm}>Save</button>
+        <button className="button" onClick={this.props.saveUserForm}>Save</button>
       </div>
     );
   }

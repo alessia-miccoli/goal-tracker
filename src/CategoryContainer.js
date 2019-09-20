@@ -1,5 +1,5 @@
 import React from 'react';
-import './style/CategoryContainer.css'
+import './style/CategoryContainer.css';
 
 class CategoryContainer extends React.Component{
 
@@ -7,7 +7,7 @@ class CategoryContainer extends React.Component{
         return(
             <div className="categoryContainer">
             {this.props.category}
-            <button id={this.props.category} onClick={this.props.removeCategory}>x</button>
+            <button className="categoryContainerButton deleteButton" id={this.props.category} onClick={this.props.removeCategory}>x</button>
             </div>
         )
     }

@@ -1,3 +1,18 @@
 .categoryContainer{
-    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20vw;
+    padding: 20px;
+    background-color: #27476E;
+    box-shadow: 1px 1px rgba(20, 20, 20, 0.151);
+    min-height: 10vh;
+    margin: 2%;
+    position: relative;
+}
+
+.categoryContainerButton{
+    position: absolute;
+    right: 5px;
+    top: 5px;
 }

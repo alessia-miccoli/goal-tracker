@@ -1,0 +1,21 @@
+.addContainer{
+    margin-top: 10px;
+}
+
+.categoryField{
+    border: none;
+    background-color: inherit;
+    outline: none;
+    text-align: center;
+    color: white;
+    border-bottom: 2px solid rgba(20, 20, 20, 0.151);
+    padding: 2%;
+}
+
+.categoryField::placeholder{
+    color: azure;
+}
+
+.errorMessage{
+    color: red;
+}

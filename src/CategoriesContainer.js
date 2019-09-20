@@ -11,7 +11,7 @@ class CategoriesContainer extends React.Component{
         return(
             <div>
                 <div id="categoriesContainer">
-                    {categories}
+                    {this.props.categories.length == 0 ? <h4 id="noCategory">To start, add a Category.</h4> : categories }
                 </div>
                 
                 <Categories 
