@@ -10,14 +10,13 @@ class UserForm extends React.Component {
     return (
       <div className="UserForm">
 
-        <h4>Let's start by knowing you and what you'd like to accomplish this year.</h4>
         <div id="userForm">
           <label>What's your name? </label><br/>
           <input id="nameField" onChange={this.props.getUserName} type="text"/>
 
           <div id="categories">
             
-            <h4>Insert below the categories ("career", "health", "school", ...) of your goals to keep them organized.</h4>
+            <h4>Insert below the categories (ex. "Career") of your goals to keep them organized.</h4>
 
             <Categories categories={this.props.categories}
             saveCategory={this.props.saveCategory}

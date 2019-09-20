@@ -33,10 +33,12 @@ class App extends React.Component {
         errorMessage: `Category ${category} is already present.`
       }));
     }else{
-      this.setState((prevState)=>({
-        categories: prevState.categories.concat(category.trim()),
-        errorMessage: ""
-      }));
+      if(category !== ""){
+        this.setState((prevState)=>({
+          categories: prevState.categories.concat(category.trim()),
+          errorMessage: ""
+        }));
+      }
     }
 
     event.target.category.value = "";
